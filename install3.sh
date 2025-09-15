@@ -5,7 +5,7 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
-install --mode=0777 start_omnetpp.sh /usr/local/bin
+install --mode=0777 start_omnetpp.sh /home/user/omnetpp-6.2.0
 
 sudo -u ${REALUSER} rm /home/user/.local/share/applications/omnetpp*.desktop
 sudo -u ${REALUSER} install --mode=0700 OMNeTpp.desktop /home/user/.local/applications
