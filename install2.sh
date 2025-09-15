@@ -10,17 +10,17 @@ apt -y install pkg-config bison flex python3-numpy python3-scipy python3-pandas 
                python3-matplotlib python3-ipython python3-dev qt6-base-dev qt6-base-dev-tools \
                qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0 ccache
 
-# cd
+# Change to home directory
 cd /home/user
 pwd
 
-# Download OMNeT++
+# Download OMNeT++ if tgz-file is not already present
 TGZFILE=omnetpp-6.2.0-linux-x86_64.tgz
 if [ ! -f "${TGZFILE}" ] ; then
   wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.2.0/${TGZFILE}
 fi
 
-# Expand
+# Delete old omnet directory and unpack tgz file
 if [ -d omnetpp-6.2.0 ] ; then
   rm -rf omnetpp-6.2.0
 fi
@@ -31,5 +31,8 @@ sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
 
-# make
-echo "Goto /home/user/omnetpp-6.2.0 directory and execute 'make' to compile OMNeT++"
+echo "Run \'make\' command? (May take a long time)"
+read -r ANSWER
+if [ "${ANSWER}" = "y" ] || [ "${ANSWER}" = "Y" ] ; then
+  make
+fi

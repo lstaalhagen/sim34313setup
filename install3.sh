@@ -16,7 +16,7 @@ usermod -aG vboxsf user
 # Handling models
 sudo -u ${REALUSER} mkdir -p /home/user/Models
 sudo -u ${REALUSER} install --mode=0755 getmodels.sh /home/user/Models
-install getmodels.service /etc/systemd/system/getmodels.service
+install --mode=0644 getmodels.service /etc/systemd/system/getmodels.service
 systemctl daemon-reload
 systemctl enable getmodels.service
 

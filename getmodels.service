@@ -1,10 +1,12 @@
 [Unit]
-Description=Download models from Github
+Description="Download models from Github"
+After=network-online.target
 
 [Service]
-ExecStart=/home/user/Models/getmodels.sh
 Type=oneshot
-RemainAfterExit=no
+# ExecStart=/bin/bash -c "echo Something"
+ExecStart=/usr/bin/nm-online
+ExecStart=/usr/bin/bash -c /home/user/Models/getmodels.sh
 
 [Install]
 WantedBy=multi-user.target
