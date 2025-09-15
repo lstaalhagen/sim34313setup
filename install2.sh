@@ -5,6 +5,11 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
+# Install dependencies
+apt -y install pkg-config bison flex python3-numpy python3-scipy python3-pandas \
+               python3-matplotlib python3-ipython python3-dev qt6-base-dev qt6-base-dev-tools \
+               qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0 ccache
+
 # cd
 cd /home/user
 pwd
@@ -17,3 +22,11 @@ fi
 
 # Expand
 tar xzf $TGZFILE
+
+cd omnetpp-6.2.0
+sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
+source setenv
+./configure
+
+# make
+echo "Goto /home/user/omnetpp-6.2.0 directory and execute 'make' to compile OMNeT++"
