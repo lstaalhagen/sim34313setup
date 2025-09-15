@@ -7,3 +7,4 @@ Files for setup of the simulation VM for course 34313
 3. Change dir (`cd sim34313setup`)
 4. Run first install script (`sudo sh ./install.sh`)
 5. If successful, run second install script (`sudo sh ./install2.sh`)
+6. If successful, run third install script (`sudo sh ./install3.sh`)
