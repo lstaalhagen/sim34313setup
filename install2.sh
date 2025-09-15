@@ -21,6 +21,9 @@ if [ ! -f "${TGZFILE}" ] ; then
 fi
 
 # Expand
+if [ -d omnetpp-6.2.0 ] ; then
+  rm -rf omnetpp-6.2.0
+fi
 tar xzf $TGZFILE
 
 cd omnetpp-6.2.0
