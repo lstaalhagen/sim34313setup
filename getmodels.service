@@ -1,0 +1,10 @@
+[Unit]
+Description=Download models from Github
+
+[Service]
+ExecStart=/home/user/Models/getmodels.sh
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
