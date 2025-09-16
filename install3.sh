@@ -23,3 +23,6 @@ install -o user -g user --mode=0755 getmodels.sh /home/user/Models/
 install --mode=0644 getmodels.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable getmodels.service
+
+# Create directory for simulations
+sudo -u ${REALUSER} mkdir -p /home/user/Simulations
