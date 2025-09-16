@@ -3,9 +3,10 @@ Description="Download models from Github"
 After=network-online.target
 
 [Service]
+User=user
 Type=oneshot
 # ExecStart=/bin/bash -c "echo Something"
-ExecStart=/usr/bin/nm-online
+ExecStart=/usr/bin/nm-online -q
 ExecStart=/usr/bin/bash -c /home/user/Models/getmodels.sh
 
 [Install]
