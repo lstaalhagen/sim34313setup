@@ -5,14 +5,15 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
-cat << EOF > ./setup_omnetpp.sh
-#!/usr/bin/env bash
+OMNETPPVER="6.2.0"
+TGZFILE="omnetpp-${OMNETPPVER}-linux-x86_64.tgz"
+
+sudo -u ${REALUSER} /bin/bash << EOF
 cd /home/user
-TGZFILE=omnetpp-6.2.0-linux-x86_64.tgz
-[ ! -f "${TGZFILE}" ] && wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.2.0/${TGZFILE}
-rm -rf omnetpp-6.2.0
+[ ! -f "${TGZFILE}" ] && wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETVER}/${TGZFILE}
+rm -rf omnetpp-${OMNETVER}
 tar xzf $TGZFILE
-cd omnetpp-6.2.0
+cd omnetpp-${OMNETVER}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
@@ -22,6 +23,3 @@ if [ "${ANSWER}" = "y" ] || [ "${ANSWER}" = "Y" ] ; then
   make
 fi
 EOF
-
-sudo -u ${REALUSER} /bin/bash ./setup_omnetpp.sh
-rm -f ./setup_omnetpp.sh
