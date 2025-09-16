@@ -10,10 +10,10 @@ TGZFILE="omnetpp-${OMNETPPVER}-linux-x86_64.tgz"
 
 sudo -u ${REALUSER} /bin/bash << EOF
 cd /home/user
-[ ! -f "${TGZFILE}" ] && wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETVER}/${TGZFILE}
-rm -rf omnetpp-${OMNETVER}
+[ ! -f "${TGZFILE}" ] && wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVER}/${TGZFILE}
+rm -rf omnetpp-${OMNETPPVER}
 tar xzf $TGZFILE
-cd omnetpp-${OMNETVER}
+cd omnetpp-${OMNETPPVER}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
