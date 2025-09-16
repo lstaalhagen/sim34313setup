@@ -17,9 +17,5 @@ cd omnetpp-${OMNETPPVER}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
-echo -n "Run 'make' command? (Will take a long time)"
-read -r ANSWER
-if [ "${ANSWER}" = "y" ] || [ "${ANSWER}" = "Y" ] ; then
-  make
-fi
+make
 EOF
