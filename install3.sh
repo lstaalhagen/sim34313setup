@@ -5,7 +5,7 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
-install -o user -g user --mode=0755 start_omnetpp.sh /home/user/omnetpp-6.2.0/
+# install -o user -g user --mode=0755 start_omnetpp.sh /home/user/omnetpp-6.2.0/
 
 # Remove old desktop files
 # rm -f /home/user/.local/share/applications/omnetpp*.desktop
@@ -18,11 +18,11 @@ install -o user -g user --mode=0755 start_omnetpp.sh /home/user/omnetpp-6.2.0/
 # usermod -aG vboxsf user
 
 # Handling models
-sudo -u ${REALUSER} mkdir -p /home/user/Models
-install -o user -g user --mode=0755 getmodels.sh /home/user/Models/
-install --mode=0644 getmodels.service /etc/systemd/system/
-systemctl daemon-reload
-systemctl enable getmodels.service
+# sudo -u ${REALUSER} mkdir -p /home/user/Models
+# install -o user -g user --mode=0755 getmodels.sh /home/user/Models/
+# install --mode=0644 getmodels.service /etc/systemd/system/
+# systemctl daemon-reload
+# systemctl enable getmodels.service
 
 # Create directory for simulations
-sudo -u ${REALUSER} mkdir -p /home/user/Simulations
+# sudo -u ${REALUSER} mkdir -p /home/user/Simulations
