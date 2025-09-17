@@ -29,4 +29,4 @@ install -o user -g user --mode=0700 OMNeTpp.desktop ${HOMEDIR}/.local/share/appl
 
 # Install start-script
 install -o user -g user --mode=0755 start_omnetpp_skeleton.sh ${HOMEDIR}/${OMNETPPDIR}/start_omnetpp.sh
-sed -i 's/
+sed -i "s!TAG:CD_TO_OMNETPPDIR!${HOMEDIR}/${OMNETPPDIR}!g" ${HOMEDIR}/${OMNETPPDIR}/start_omnetpp.sh
