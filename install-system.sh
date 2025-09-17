@@ -8,16 +8,22 @@ REALUSER=${SUDO_USER}
 source ./env.sh
 
 # Update packages
+echo "#"
+echo "# Updating packages ..."
+echo "#"
 apt update && apt -y upgrade
 apt update && apt -y autoremove
+echo " "
 
 # Install dependencies
-apt -y install pkg-config bison flex python3-numpy python3-scipy python3-pandas \
+echo "#"
+echo "# Installing dependencies ..."
+echo "#"
+apt -yq install pkg-config bison flex python3-numpy python3-scipy python3-pandas \
                python3-matplotlib python3-ipython python3-dev qt6-base-dev qt6-base-dev-tools \
                qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0 ccache htop
-
-# Install Wireshark silently
 DEBIAN_FRONTEND=noninteractive apt-get -yq install wireshark
+echo " "
 
 # Clean up apt cache to save space
 apt clean
@@ -28,12 +34,16 @@ sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=2/g' /etc/default/grub
 update-grub
 
 # Stop/remove misc irrelevant services listed in file 'disablelist'
+echo "#"
+echo "# Disabling unnecessary services ..."
+echo "#"
 if [ -s disablelist ] ; then
   for p in $(cat disablelist) ; do
     systemctl stop ${p}
     systemctl mask ${p}
   done
 fi
+echo " "
 
 # Setup automatic download of model files from GitHub at boot
 sudo -u ${REALUSER} mkdir -p ${MODELSDIR}
@@ -45,3 +55,7 @@ systemctl enable getmodels.service
 
 # Create directory for simulations
 sudo -u ${REALUSER} mkdir -p ${SIMULATIONDIR}
+
+echo "#"
+echo "# Done"
+echo "#"

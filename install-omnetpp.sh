@@ -11,13 +11,16 @@ TGZFILE="omnetpp-${OMNETPPVERSION}-linux-x86_64.tgz"
 
 sudo -u ${REALUSER} /bin/bash << EOF
 cd ${HOMEDIR}
+echo "# Downloading OMNeT++"
 [ ! -f "${TGZFILE}" ] && wget -q https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVERSION}/${TGZFILE}
 rm -rf ${OMNETPPDIR}
+echo "# Expanding tgz file"
 tar xzf $TGZFILE
 cd ${OMNETPPDIR}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
+echo "# Making OMNeT++"
 make
 EOF
 
