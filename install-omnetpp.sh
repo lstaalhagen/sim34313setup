@@ -5,24 +5,24 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
-OMNETPPVER="6.2.0"
-TGZFILE="omnetpp-${OMNETPPVER}-linux-x86_64.tgz"
+source ./env.sh
+
+TGZFILE="omnetpp-${OMNETPPVERSION}-linux-x86_64.tgz"
 
 sudo -u ${REALUSER} /bin/bash << EOF
-cd /home/user
-[ ! -f "${TGZFILE}" ] && wget https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVER}/${TGZFILE}
-rm -rf omnetpp-${OMNETPPVER}
+cd ${HOMEDIR}
+[ ! -f "${TGZFILE}" ] && wget -q https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVERSION}/${TGZFILE}
+rm -rf omnetpp-${OMNETPPVERSION}
 tar xzf $TGZFILE
-cd omnetpp-${OMNETPPVER}
+cd ${OMNETPPHOMEDIR}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
 make
 EOF
 
-install -o user -g user --mode=0755 start_omnetpp.sh /home/user/omnetpp-6.2.0/
+install -o user -g user --mode=0755 start_omnetpp.sh ${OMNETPPHOMEDIR}/
 
 # Fix desktop files
 rm -f /home/user/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
-install -o user -g user --mode=0700 OMNeTpp.desktop /home/user/.local/share/applications/
-
+install -o user -g user --mode=0700 OMNeTpp.desktop ${HOMEDIR}/.local/share/applications/
