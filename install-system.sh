@@ -5,6 +5,8 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
+source ./env.sh
+
 # Update packages
 apt update && apt -y upgrade
 apt update && apt -y autoremove
