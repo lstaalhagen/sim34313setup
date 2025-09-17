@@ -6,7 +6,7 @@ After=network-online.target
 User=user
 Type=oneshot
 ExecStart=/usr/bin/nm-online -q
-ExecStart=/usr/bin/bash -c /home/user/Models/getmodels.sh
+ExecStart=/usr/bin/bash -c TAG:MODELSDIR/getmodels.sh
 
 [Install]
 WantedBy=multi-user.target
