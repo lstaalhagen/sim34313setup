@@ -4,11 +4,11 @@ Files for setup of the simulation VM for course 34313. The files and scripts ass
 ## Instructions
 1. Install git manually (`sudo apt update; sudo apt -y install git`)
 2. Clone repo (`git clone https://github.com/lstaalhagen/sim34313setup`)
-3. Edit `env.sh` file and set environment variables to the correct values
 4. Change dir (`cd sim34313setup`)
-5. Run install-system script (`sudo sh ./install-system.sh`)
-6. Run install-omnetpp script (`sudo sh ./install-omnetpp.sh`)
-7. [Optional] Create a snapshot
+5. Edit `env.sh` file and set environment variables to the correct values
+6. Run install-system script (`sudo sh ./install-system.sh`)
+7. Run install-omnetpp script (`sudo sh ./install-omnetpp.sh`)
+8. [Optional] Create a snapshot
 
 ## Manual stuff afterwards
 1. [Optional] Disable Screensaver
