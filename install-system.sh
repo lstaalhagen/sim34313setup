@@ -44,4 +44,4 @@ systemctl daemon-reload
 systemctl enable getmodels.service
 
 # Create directory for simulations
-sudo -u ${REALUSER} mkdir -p ${HOMEDIR}/Simulations
+sudo -u ${REALUSER} mkdir -p ${SIMULATIONDIR}
