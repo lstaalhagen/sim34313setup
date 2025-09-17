@@ -22,12 +22,11 @@ make
 EOF
 
 # Fix desktop files
-rm -f /home/user/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
+rm -f ${HOMEDIR}/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
 install -o user -g user --mode=0700 OMNeTpp_skeleton.desktop ${HOMEDIR}/.local/share/applications/OMNeTpp.desktop
-sed -i "s!TAG:OMNETPPDIR!${OMNETPPDIR}!g" ${HOMEDIR}/.local/share/applications/OMNeTpp.desktop
+sed -i "s!TAG:OMNETPPDIR!${HOMEDIR}/${OMNETPPDIR}!g" ${HOMEDIR}/.local/share/applications/OMNeTpp.desktop
 sed -i "s!TAG:OMNETPPVERSION!${OMNETPPVERSION}!g" ${HOMEDIR}/.local/share/applications/OMNeTpp.desktop
-
 
 # Install start-script
 install -o user -g user --mode=0755 start_omnetpp_skeleton.sh ${HOMEDIR}/${OMNETPPDIR}/start_omnetpp.sh
-sed -i "s!TAG:CD_TO_OMNETPPDIR!cd ${HOMEDIR}/${OMNETPPDIR}!g" ${HOMEDIR}/${OMNETPPDIR}/start_omnetpp.sh
+sed -i "s!TAG:OMNETPPDIR!${HOMEDIR}/${OMNETPPDIR}!g" ${HOMEDIR}/${OMNETPPDIR}/start_omnetpp.sh
