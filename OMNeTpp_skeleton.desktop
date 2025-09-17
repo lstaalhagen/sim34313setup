@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Terminal=false
-Exec=/home/user/omnetpp-6.2.0/start_omnetpp.sh
-Icon=/home/user/omnetpp-6.2.0/images/logo/logo128.png
-Name=OMNeT++ 6.2.0
+Exec=TAG:OMNETPPDIR/start_omnetpp.sh
+Icon=TAG:OMNETPPDIR/images/logo/logo128.png
+Name=OMNeT++ TAG:OMNETPPVERSION
 Categories=Development
