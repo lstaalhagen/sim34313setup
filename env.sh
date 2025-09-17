@@ -1,4 +1,6 @@
 export DEFAULTUSERNAME=user
 export HOMEDIR=/home/${DEFAULTUSERNAME}
+export MODELSDIR=${HOMEDIR}/Models
+export SIMULATIONDIR=${HOMEDIR}/Simulations
 export OMNETPPVERSION=6.2.0
 export OMNETPPDIR=omnetpp-${OMNETPPVERSION}
