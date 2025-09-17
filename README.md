@@ -5,11 +5,14 @@ Files for setup of the simulation VM for course 34313
 1. Install git manually (`sudo apt update; sudo apt -y install git`)
 2. Clone repo (`git clone https://github.com/lstaalhagen/sim34313setup`)
 3. Change dir (`cd sim34313setup`)
-4. Run first install script (`sudo sh ./install.sh`)
-5. If successful, run second install script (`sudo sh ./install2.sh`)
-6. If successful, run third install script (`sudo sh ./install3.sh`)
+4. Run install-system script (`sudo sh ./install-system.sh`)
+5. Run install-omnetpp script (`sudo sh ./install-omnetpp.sh`)
 
 ## Manual stuff afterwards
 1. Disable Screensaver and Power Manager (Display)
-2. Install Guestadditions [Optional]
-3. 
+2. Guestadditions [Optional]
+  - Use 'Install Guest Additions' from VirtualBox menu to mount drive
+  - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
+  - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
+    - Configure shared folder in VM settings when VM shut down
+
