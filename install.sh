@@ -12,7 +12,7 @@ apt update && apt -y autoremove
 # Install dependencies
 apt -y install pkg-config bison flex python3-numpy python3-scipy python3-pandas \
                python3-matplotlib python3-ipython python3-dev qt6-base-dev qt6-base-dev-tools \
-               qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0 ccache
+               qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0 ccache htop
 
 # Install Wireshark silently
 DEBIAN_FRONTEND=noninteractive apt-get -yq install wireshark
