@@ -1,5 +1,5 @@
 # sim34313setup
-Files for setup of the simulation VM for course 34313
+Files for setup of the simulation VM for course 34313. The files and scripts assumes an Ubuntu (or derivative) version 24.04 LTS
 
 ## Instructions
 1. Install git manually (`sudo apt update; sudo apt -y install git`)
@@ -17,4 +17,3 @@ Files for setup of the simulation VM for course 34313
    - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
    - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
       - Configure shared folder in VM settings when VM shut down
-
