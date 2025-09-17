@@ -10,10 +10,11 @@ Files for setup of the simulation VM for course 34313
 6. [Optional] Create a snapshot
 
 ## Manual stuff afterwards
-1. Disable Screensaver and Power Manager (Display)
-2. Guestadditions [Optional]
-    - Use 'Install Guest Additions' from VirtualBox menu to mount drive
-    - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
-    - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
-        - Configure shared folder in VM settings when VM shut down
+1. [Optional] Disable Screensaver
+2. [Optional] In Power Manager (Tab = Display), set timeouts to 'never'
+3. Guestadditions [Optional]
+ - Use 'Install Guest Additions' from VirtualBox menu to mount drive
+ - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
+ - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
+  - Configure shared folder in VM settings when VM shut down
 
