@@ -21,8 +21,6 @@ source setenv
 make
 EOF
 
-# install -o user -g user --mode=0755 start_omnetpp.sh ${HOMEDIR}/${OMNETPPDIR}/
-
 # Fix desktop files
 rm -f /home/user/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
 install -o user -g user --mode=0700 OMNeTpp.desktop ${HOMEDIR}/.local/share/applications/
