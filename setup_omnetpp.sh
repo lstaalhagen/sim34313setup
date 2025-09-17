@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+#####################################
+## FILE IS DEPRECATED - DO NOT USE ##
+#####################################
+
+echo "This file is deprecated - do not use"
+exit 0
+
 cd /home/user
 
 # Download OMNeT++ if tgz-file is not already present
