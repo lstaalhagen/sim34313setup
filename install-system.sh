@@ -36,11 +36,11 @@ if [ -s disablelist ] ; then
 fi
 
 # Setup automatic download of model files from GitHub at boot
-sudo -u ${REALUSER} mkdir -p /home/user/Models
-install -o user -g user --mode=0755 getmodels.sh /home/user/Models/
+sudo -u ${REALUSER} mkdir -p ${HOMEDIR}/Models
+install -o user -g user --mode=0755 getmodels.sh ${HOMEDIR}/Models/
 install --mode=0644 getmodels.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable getmodels.service
 
 # Create directory for simulations
-sudo -u ${REALUSER} mkdir -p /home/user/Simulations
+sudo -u ${REALUSER} mkdir -p ${HOMEDIR}/Simulations
