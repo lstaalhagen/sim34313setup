@@ -11,7 +11,7 @@ cd /home/user/Models
 
 # Check for repo existence
 GIT_TERMINAL_PROMPT=no
-${GITCMD} -ls-remote ${REPOSITORY} HEAD &>/dev/null
+${GITCMD} ls-remote ${REPOSITORY} HEAD &>/dev/null
 if [ $? -ne 0 ] ; then
   echo "Error checking repository. Exiting"
   exit 1
