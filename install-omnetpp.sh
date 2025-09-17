@@ -12,16 +12,16 @@ TGZFILE="omnetpp-${OMNETPPVERSION}-linux-x86_64.tgz"
 sudo -u ${REALUSER} /bin/bash << EOF
 cd ${HOMEDIR}
 [ ! -f "${TGZFILE}" ] && wget -q https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVERSION}/${TGZFILE}
-rm -rf omnetpp-${OMNETPPVERSION}
+rm -rf ${OMNETPPDIR}
 tar xzf $TGZFILE
-cd ${OMNETPPHOMEDIR}
+cd ${OMNETPPDIR}
 sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
 make
 EOF
 
-install -o user -g user --mode=0755 start_omnetpp.sh ${OMNETPPHOMEDIR}/
+install -o user -g user --mode=0755 start_omnetpp.sh ${HOMEDIR}/${OMNETPPDIR}/
 
 # Fix desktop files
 rm -f /home/user/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
