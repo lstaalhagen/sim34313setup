@@ -8,14 +8,14 @@ REALUSER=${SUDO_USER}
 install -o user -g user --mode=0755 start_omnetpp.sh /home/user/omnetpp-6.2.0/
 
 # Remove old desktop files
-rm -f /home/user/.local/share/applications/omnetpp*.desktop
-rm -f /usr/share/applications/omnetpp*.desktop
+# rm -f /home/user/.local/share/applications/omnetpp*.desktop
+# rm -f /usr/share/applications/omnetpp*.desktop
 
 # Install our desktop
-install -o user -g user --mode=0700 OMNeTpp.desktop /home/user/.local/share/applications/
+# install -o user -g user --mode=0700 OMNeTpp.desktop /home/user/.local/share/applications/
 
 # Add user to vboxsf group
-usermod -aG vboxsf user
+# usermod -aG vboxsf user
 
 # Handling models
 sudo -u ${REALUSER} mkdir -p /home/user/Models
