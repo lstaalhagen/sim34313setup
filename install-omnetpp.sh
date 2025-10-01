@@ -21,7 +21,7 @@ sed -i 's/WITH_OSG=.*/WITH_OSG=no/g' configure.user
 source setenv
 ./configure
 echo "# Making OMNeT++"
-make
+make -j4
 EOF
 
 # Fix desktop files
