@@ -9,7 +9,8 @@ source ./env.sh
 
 TGZFILE="omnetpp-${OMNETPPVERSION}-linux-x86_64.tgz"
 
-sudo -u ${REALUSER} /bin/bash << EOF
+cat > tmpinstaller.sh << EOF
+#!/usr/bin/env bash
 cd ${HOMEDIR}
 echo "# Downloading OMNeT++"
 [ ! -f "${TGZFILE}" ] && wget -q https://github.com/omnetpp/omnetpp/releases/download/omnetpp-${OMNETPPVERSION}/${TGZFILE}
@@ -23,6 +24,10 @@ source setenv
 echo "# Making OMNeT++"
 make -j4
 EOF
+
+chmod +x tmpinstaller.sh
+chown user: tmpinstaller.sh
+sudo -u ${REALUSER} ./tmpinstaller.sh
 
 # Fix desktop files
 rm -f ${HOMEDIR}/.local/share/applications/omnetpp*.desktop /usr/share/applications/omnetpp*.desktop
