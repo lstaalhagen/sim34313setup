@@ -8,3 +8,4 @@ unattended-upgrades.service
 apt-daily-upgrade.service
 apt-daily-upgrade.timer
 apt-daily.timer
+wpa_supplicant.service
