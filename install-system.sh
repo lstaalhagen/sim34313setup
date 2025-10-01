@@ -8,12 +8,12 @@ REALUSER=${SUDO_USER}
 source ./env.sh
 
 # Update packages
-echo "#"
-echo "# Updating packages ..."
-echo "#"
-apt update && apt -y upgrade
-apt update && apt -y autoremove
-echo " "
+# echo "#"
+# echo "# Updating packages ..."
+# echo "#"
+# apt update && apt -y upgrade
+# apt update && apt -y autoremove
+# echo " "
 
 # Install dependencies
 echo "#"
