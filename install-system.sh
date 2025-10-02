@@ -16,13 +16,15 @@ source ./env.sh
 # echo " "
 
 # Install dependencies
-# Qt6 dependencies (qt6-base-dev qt6-base-dev-tools qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0) temporarily skipped
+# Qt5: qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5opengl5-dev libwebkit2gtk-4.1-0
+# Qt6: qt6-base-dev qt6-base-dev-tools qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0
 echo "#"
 echo "# Installing dependencies ..."
 echo "#"
 apt -yq install pkg-config bison flex python3-numpy python3-scipy python3-pandas \
-               python3-matplotlib python3-ipython python3-dev ccache htop \
-               qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5opengl5-dev libwebkit2gtk-4.1-0
+               python3-matplotlib python3-ipython python3-dev ccache htop doxygen \
+               qt6-base-dev qt6-base-dev-tools qmake6 libqt6svg6 qt6-wayland libwebkit2gtk-4.1-0
+               
                
 DEBIAN_FRONTEND=noninteractive apt-get -yq install wireshark
 echo " "
