@@ -5,4 +5,4 @@ if [ ! -d .metadata ] ; then
   exit 1
 fi
 
-rm .metadata/.plugins/org.eclipse.debug.core/.launches/*.launch
+rm -f .metadata/.plugins/org.eclipse.debug.core/.launches/*.launch
