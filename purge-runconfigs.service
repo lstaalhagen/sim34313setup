@@ -1,0 +1,10 @@
+[Unit]
+Description="Purge all existing run configurations"
+
+[Service]
+User=user
+Type=oneshot
+ExecStart=/usr/bin/bash -c /home/user/Simulations/purge-runconfigs.sh
+
+[Install]
+WantedBy=multi-user.target
