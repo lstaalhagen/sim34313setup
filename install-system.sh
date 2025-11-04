@@ -51,9 +51,14 @@ echo " "
 
 # Setup automatic download of model files from GitHub at boot
 sudo -u ${REALUSER} mkdir -p ${MODELSDIR}
+
 install -o user -g user --mode=0755 getmodels.sh ${MODELSDIR}/
 install --mode=0644 getmodels_skeleton.service /etc/systemd/system/getmodels.service
 sed -i "s!TAG:MODELSDIR!${MODELSDIR}!g" /etc/systemd/system/getmodels.service
+
+install -o user -g user --mode=0755 purge-runconfigs.sh ${MODELSDIR}/
+install --mode=0644 purge-runconfigs.service /etc/systemd/system/purge-runconfigs.service
+
 systemctl daemon-reload
 systemctl enable getmodels.service
 
