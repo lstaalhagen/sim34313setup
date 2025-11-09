@@ -13,8 +13,14 @@ Files for setup of the simulation VM for course 34313. The files and scripts ass
 ## Manual stuff afterwards
 1. [Optional] Disable Screensaver
 2. [Optional] In Power Manager (Tab = Display), set timeouts to 'never'
-3. Guestadditions [Optional]
-   - Use 'Install Guest Additions' from VirtualBox menu to mount drive
-   - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
-   - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
-      - Configure shared folder in VM settings when VM shut down
+
+## VirtualBox guest additions
+Consider if this is really necessary since guest additions for VB 7.2.4 and Ubuntu 24.04-LTS seems to be a poor match.
+- Use 'Install Guest Additions' from VirtualBox menu to mount drive
+- Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
+- Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
+   - Configure shared folder in VM settings when VM shut down
+If Guest additions causes too many problems:
+- Use 'Install Guest Additions' from VirtualBox menu to mount drive
+- Uninstall using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
+- Block module from loading by adding the line `blacklist vboxguest` to `/etc/modprobe.d/blacklist.conf`
