@@ -23,5 +23,5 @@ Consider if this is really necessary since guest additions for VB 7.2.4 and Ubun
 
 If Guest additions causes too many problems:
 - Use 'Install Guest Additions' from VirtualBox menu to mount drive
-- Uninstall using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
+- Uninstall using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run uninstall`
 - Block module from loading by adding the line `blacklist vboxguest` to `/etc/modprobe.d/blacklist.conf`
