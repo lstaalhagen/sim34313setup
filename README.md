@@ -20,6 +20,7 @@ Consider if this is really necessary since guest additions for VB 7.2.4 and Ubun
 - Install using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
 - Add user to vboxsf group (`sudo usermod -aG vboxsf user`)
    - Configure shared folder in VM settings when VM shut down
+
 If Guest additions causes too many problems:
 - Use 'Install Guest Additions' from VirtualBox menu to mount drive
 - Uninstall using (in terminal) `cd /media/user/VB???? ; sudo sh ./VBoxLinuxAdditions.run`
